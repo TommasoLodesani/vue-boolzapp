@@ -3,3 +3,87 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+main{
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    
+}
+
+.active{
+    background-color: #eaeaea;
+
+}
+
+
+#left{
+    width: 536px;
+    /* height: 500px; */
+    /* background-color: yellow; */
+}
+
+.tab_utente{
+    display: flex;
+    justify-content: space-between;
+    background-color: #eaeaea;
+    padding: 10px;
+ 
+}
+
+.tab_utente.white{
+    background-color: white;
+}
+
+.post-meta {
+    display: flex;
+}
+
+.post-meta__icon {
+    margin-right: 24px;
+}
+
+.post-meta__data {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.post-meta__time {
+    font-size: 0.8rem;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    max-width: 40px;
+}
+
+.icon_right {
+    display: flex;
+    align-items: center;
+}
+
+
+.tab_utente.blue{
+    background-color: #8edafc;
+    padding: 20px;
+}
+
+.searchBar{
+    display: flex;
+    background-color: #eaeaea;
+}
+
+
+
+
+
+
+
+
+
+#right {
+    /* width: 84%; */
+    max-width: calc(100% - 536px);
+}
