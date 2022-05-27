@@ -179,7 +179,7 @@ const app = new Vue({
     },
     methods : {
         selectContact(id){
-            this.avatar = id;
+            this.activeContact = id;
         }
     }
 })

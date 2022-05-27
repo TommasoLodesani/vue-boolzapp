@@ -12,7 +12,7 @@ main{
     
 }
 
-.active{
+.tab_utente.white.active{
     background-color: #eaeaea;
 
 }
@@ -85,5 +85,27 @@ main{
 
 #right {
     /* width: 84%; */
-    max-width: calc(100% - 536px);
+    width: calc(100% - 536px);
+}
+
+.container-chat{
+    display: flex;
+}
+
+.verde{
+    width: 300px;
+    background-color: green ;
+    height: 50px;
+    margin: 5px;
+}
+
+.bianco{
+    width: 300px;
+    background-color: aqua;
+    height: 50px;
+    margin: 5px;
+}
+
+.hidden{
+    visibility:hidden;
 }
