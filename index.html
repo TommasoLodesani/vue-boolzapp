@@ -76,9 +76,8 @@
                     </div>
                 </div>
 
-                <div v-for="(contatto,i) in contacts" class="tab_utente white" 
-                :class="i === activeContact ? 'active' : '' "
-                @click="selectContact(i)">
+                <div v-for="(contatto,i) in contacts" class="tab_utente white"
+                    :class="i === activeContact ? 'active' : '' " @click="selectContact(i)">
 
                     <div class="post-meta">
 
@@ -97,12 +96,12 @@
                     <div class="icon_right time">
 
                         12:00
-                    
+
                     </div>
 
                 </div>
 
-                
+
             </section>
 
             <section id="right">
@@ -134,49 +133,27 @@
 
                 <div class="container-chat">
 
+                    <div class="utente" v-for="(message,i) in contacts[activeContact].messages">
 
-                    <div class="chat-left" v-for="(element, key, i) in contacts" :id="key" :key="key" >
+                        {{message.message}}
 
-                        <div class="utente" v-for="(element,i) in element.messages" >
-
-                            {{element.message}} 
- 
-                        </div>
-                        
-                      
-                        
                     </div>
-
-                    <!-- <div class="chat-left">
-
-                        <div class="utente" v-for="(element, key, i) in contacts" :id="key" :key="key">
-
-                            <span  v-for="(element,i) in element.messages">
-                                {{element.message}} 
-
-                            </span>
-                          
-                        </div>
-                        
-                      
-                        
-                    </div> -->
 
                     <div class="chat-right">
 
                         <div class="interlo hidden"></div>
                         <div class="interlo"></div>
                         <div class="interlo hidden"></div>
-                       
+
 
                     </div>
 
-                    
 
-                    
-                  
+
+
+
                 </div>
-               
+
 
             </section>
 
