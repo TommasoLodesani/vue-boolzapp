@@ -103,9 +103,6 @@
                 </div>
 
                 
-
-
-
             </section>
 
             <section id="right">
@@ -137,20 +134,27 @@
 
                 <div class="container-chat">
 
+
                     <div class="chat-left">
 
-                        <div class="bianco"></div>
-                        <div class="bianco hidden"></div>
-                        <div class="bianco"></div>
+                        <div class="utente" v-for="(element, key, i) in contacts" :id="key" :key="key">
+
+                            <span  v-for="(element,i) in element.messages">
+                                {{element.message}} 
+
+                            </span>
+                          
+                        </div>
+                        
                       
                         
                     </div>
 
                     <div class="chat-right">
 
-                        <div class="verde hidden"></div>
-                        <div class="verde"></div>
-                        <div class="verde hidden"></div>
+                        <div class="interlo hidden"></div>
+                        <div class="interlo"></div>
+                        <div class="interlo hidden"></div>
                        
 
                     </div>
