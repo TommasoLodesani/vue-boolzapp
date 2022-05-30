@@ -90,9 +90,12 @@ main{
 
 .container-chat{
     display: flex;
+    flex-direction: column;
 }
 
 .chat-left{
+    display: flex;
+    flex-direction: column;
    
 }
 

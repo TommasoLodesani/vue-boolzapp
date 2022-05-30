@@ -135,7 +135,19 @@
                 <div class="container-chat">
 
 
-                    <div class="chat-left">
+                    <div class="chat-left" v-for="(element, key, i) in contacts" :id="key" :key="key" >
+
+                        <div class="utente" v-for="(element,i) in element.messages" >
+
+                            {{element.message}} 
+ 
+                        </div>
+                        
+                      
+                        
+                    </div>
+
+                    <!-- <div class="chat-left">
 
                         <div class="utente" v-for="(element, key, i) in contacts" :id="key" :key="key">
 
@@ -148,7 +160,7 @@
                         
                       
                         
-                    </div>
+                    </div> -->
 
                     <div class="chat-right">
 
