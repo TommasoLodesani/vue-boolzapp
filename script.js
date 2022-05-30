@@ -189,7 +189,10 @@ const app = new Vue({
             this.newObject = { text : this.inputText, status : "sent"};
             this.newMessages.push(this.newObject);
             this.inputText = "";
-
+            // setTimeout(risposta,1000);
+            // this.risposta(){
+            //     console.log();
+            // }
         }
     }
 })
