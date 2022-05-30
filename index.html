@@ -133,17 +133,24 @@
 
                 <div class="container-chat">
 
-                    <div class="utente" v-for="(message,i) in contacts[activeContact].messages">
 
-                        {{message.message}}
+                    <div class="chat-left">
+                       
+                        <div class="utente" v-for="(message,i) in contacts[activeContact].messages">
+
+                            {{message.message}}
+    
+                        </div>
+
 
                     </div>
 
                     <div class="chat-right">
 
-                        <div class="interlo hidden"></div>
-                        <div class="interlo"></div>
-                        <div class="interlo hidden"></div>
+                        <div class="interlo" v-for="(messaggi,i) in newMessages">
+                            {{newMessages[i].text}}
+                        </div>
+                        
 
 
                     </div>
@@ -152,6 +159,11 @@
 
 
 
+                </div>
+
+                <div class="textArea">
+                    <input type="text" v-model="inputText" @keyup.enter="addText">
+                    
                 </div>
 
 

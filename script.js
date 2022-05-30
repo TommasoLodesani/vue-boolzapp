@@ -4,6 +4,9 @@ const app = new Vue({
     data : {
         
         activeContact : 0,
+        inputText : "",
+        newObject : {},
+        newMessages : [],
         contacts: [
             {
                 name: 'Michele',
@@ -180,6 +183,13 @@ const app = new Vue({
     methods : {
         selectContact(id){
             this.activeContact = id;
+        },
+
+        addText(){
+            this.newObject = { text : this.inputText, status : "sent"};
+            this.newMessages.push(this.newObject);
+            this.inputText = "";
+
         }
     }
 })
