@@ -4,6 +4,7 @@ const app = new Vue({
     data : {
         
         activeContact : 0,
+        checkStatus : "",
         inputText : "",
         newObject : {},
         newMessages : [],
@@ -189,10 +190,16 @@ const app = new Vue({
             this.newObject = { text : this.inputText, status : "sent"};
             this.newMessages.push(this.newObject);
             this.inputText = "";
-            // setTimeout(risposta,1000);
-            // this.risposta(){
-            //     console.log();
-            // }
+            setTimeout(this.risposta,1000);
+            this.risposta();
+            
+            
+        },
+        risposta(){
+            this.contacts[this.activeContact].messages.push({ message : "ok", status : "sent"});
+            console.log(this.message);
+            
+
         }
     }
 })

@@ -136,7 +136,7 @@
 
                     <div class="chat-left">
                        
-                        <div class="utente" v-for="(messaggio,i) in contacts[activeContact].messages">
+                        <div v-for="(messaggio,i) in contacts[activeContact].messages" :class="contacts[activeContact].messages.status === 'sent' ? 'utente' : '' ">
 
                             {{messaggio.message}}
     
@@ -147,7 +147,7 @@
 
                     <div class="chat-right">
 
-                        <div class="interlo" v-for="(messaggi,i) in newMessages" >
+                        <div class="interlo" v-for="(messaggi,i) in newMessages">
                             {{newMessages[i].text}}
                         </div>
                         
