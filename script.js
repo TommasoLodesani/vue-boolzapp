@@ -5,9 +5,9 @@ const app = new Vue({
         
         activeContact : 0,
         inputContact : "",
-        // inputText : "",
+        inputText : "",
         newObject : {},
-        // newMessages : [],
+        newMessages : [],
         newMessage : "",
         contacts: [
             {
@@ -229,14 +229,23 @@ const app = new Vue({
             
 
         // },
-        filterName(){
-            return this.contacts[this.activeContact].name.filter(nome){
-                
-                nome.toLowercase().includes(this.inputContact);
-            }
-            
-        
 
+
+        filterName(){
+
+            this.contacts.forEach((element,i) => {
+                
+                if(this.contacts[i].name.toLowerCase().includes(this.inputContact.toLowerCase())){
+                    this.contacts[i].visible = true;
+                    console.log("vero", this.contacts[i].visible);
+                } else{
+                    this.contacts[i].visible = false;
+                    console.log("falso",this.contacts[i].visible );
+                }
+
+            })
+           
+            
         }
     }
 })

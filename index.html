@@ -71,13 +71,16 @@
                     </div>
 
                     <div>
-                        <input type="text" v-model="inputContact">
+                        <input type="text" v-model="inputContact" @keyup="filterName">
 
                     </div>
                 </div>
 
                 <div v-for="(contatto,i) in contacts" class="tab_utente white"
-                    :class="i === activeContact ? 'active' : '' " @click="selectContact(i)">
+                    :class="[i === activeContact ? 'active' : '', contatto.visible === false ? 'hide' : '' ]" 
+                    
+                    @click="selectContact(i)"
+                    >
 
                     <div class="post-meta">
 
