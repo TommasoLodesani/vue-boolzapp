@@ -230,9 +230,12 @@ const app = new Vue({
 
         // },
         filterName(){
-            return this.contacts[this.activeContact].name.filter()
+            return this.contacts[this.activeContact].name.filter(nome){
                 
+                nome.toLowercase().includes(this.inputContact);
+            }
             
+        
 
         }
     }

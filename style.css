@@ -101,14 +101,14 @@ main{
 
 .received{
     width: 300px;
-    background-color: green ;
+    background-color: aliceblue ;
     /* height: 50px; */
     margin: 5px;
 }
 
 .sent{
     width: 300px;
-    background-color: aqua;
+    background-color: green;
     /* height: 50px; */
     margin: 5px;
 }
