@@ -4,10 +4,11 @@ const app = new Vue({
     data : {
         
         activeContact : 0,
-        checkStatus : "",
-        inputText : "",
+        inputContact : "",
+        // inputText : "",
         newObject : {},
-        newMessages : [],
+        // newMessages : [],
+        newMessage : "",
         contacts: [
             {
                 name: 'Michele',
@@ -185,19 +186,52 @@ const app = new Vue({
         selectContact(id){
             this.activeContact = id;
         },
+        getMessageClass(index){
+            let thisContact = this.contacts[this.activeContact];
+            let messageClass = 'message ' + thisContact.messages[index].status;
+            return messageClass;
 
-        addText(){
-            this.newObject = { text : this.inputText, status : "sent"};
-            this.newMessages.push(this.newObject);
-            this.inputText = "";
-            setTimeout(this.risposta,1000);
-            this.risposta();
-            
-            
         },
-        risposta(){
-            this.contacts[this.activeContact].messages.push({ message : "ok", status : "sent"});
-            console.log(this.message);
+
+        sendMessage(){
+            let thisContact = this.contacts[this.activeContact];
+            
+            thisContact.messages.push({
+                message : this.newMessage,
+                status : 'sent'
+            });
+
+            this.newMessage = '';
+
+            setTimeout(() =>{
+                thisContact.messages.push({
+                    message : "ok",
+                    status : "received"
+                });
+            },1000);
+
+        },
+        
+
+
+        // addText(){
+        //     this.newObject = { text : this.inputText, status : "sent"};
+        //     this.newMessages.push(this.newObject);
+        //     this.inputText = "";
+        //     setTimeout(this.risposta,1000);
+        //     this.risposta();
+            
+            
+        // },
+        // risposta(){
+        //     this.contacts[this.activeContact].messages.push({ message : "ok", status : "recived"});
+        //     console.log(this.message);
+            
+
+        // },
+        filterName(){
+            return this.contacts[this.activeContact].name.filter()
+                
             
 
         }

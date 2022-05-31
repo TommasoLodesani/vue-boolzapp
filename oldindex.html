@@ -1,0 +1,64 @@
+<section id="right">
+
+    <div class="tab_utente">
+
+        <div class="post-meta">
+
+            <div class="post-meta__icon">
+
+                <img class="profile-pic" src="https://unsplash.it/300/300?image=15" alt="Phil Mangione">
+
+            </div>
+            <div class="post-meta__data">
+
+                <div class="post-meta__author">Phil Mangione</div>
+                <!-- <div class="post-meta__time">4 mesi fa</div> -->
+            </div>
+        </div>
+
+        <div class="icon_right">
+            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-comment-alt"></i>
+            <i class="fas fa-comment-alt"></i>
+
+        </div>
+
+    </div>
+
+    <div class="container-chat">
+
+
+        <div class="chat-left">
+           
+            <div class="utente" v-for="(messaggio,i) in contacts[activeContact].messages">
+
+                {{messaggio.message}}
+
+            </div>
+
+
+        </div>
+
+        <div class="chat-right">
+
+            <div class="interlo" v-for="(messaggi,i) in newMessages" >
+                {{newMessages[i].text}}
+            </div>
+            
+
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <div class="textArea">
+        <input type="text" v-model="inputText" @keyup.enter="addText">
+        
+    </div>
+
+
+</section>

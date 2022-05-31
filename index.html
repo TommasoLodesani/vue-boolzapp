@@ -71,7 +71,7 @@
                     </div>
 
                     <div>
-                        <input type="text">
+                        <input type="text" v-model="inputContact">
 
                     </div>
                 </div>
@@ -136,16 +136,18 @@
 
                     <div class="chat-left">
                        
-                        <div v-for="(messaggio,i) in contacts[activeContact].messages" :class="contacts[activeContact].messages.status === 'sent' ? 'utente' : '' ">
+                        <div v-for="(messaggio,index) in contacts[activeContact].messages" :class="getMessageClass(index)">
 
-                            {{messaggio.message}}
+                            <span>{{messaggio.message}}</span>
+
+                            
     
                         </div>
 
 
                     </div>
 
-                    <div class="chat-right">
+                    <!-- <div class="chat-right">
 
                         <div class="interlo" v-for="(messaggi,i) in newMessages">
                             {{newMessages[i].text}}
@@ -153,7 +155,7 @@
                         
 
 
-                    </div>
+                    </div> -->
 
 
 
@@ -162,7 +164,7 @@
                 </div>
 
                 <div class="textArea">
-                    <input type="text" v-model="inputText" @keyup.enter="addText">
+                    <input type="text" v-model="newMessage" @keyup.enter="sendMessage()">
                     
                 </div>
 

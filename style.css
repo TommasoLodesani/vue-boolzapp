@@ -99,14 +99,14 @@ main{
    
 }
 
-.interlo{
+.received{
     width: 300px;
     background-color: green ;
     /* height: 50px; */
     margin: 5px;
 }
 
-.utente{
+.sent{
     width: 300px;
     background-color: aqua;
     /* height: 50px; */
