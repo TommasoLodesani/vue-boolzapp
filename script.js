@@ -246,7 +246,9 @@ const app = new Vue({
             })
            
             
-        }
+        },
+
+       
     }
 })
 

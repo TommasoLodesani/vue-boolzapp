@@ -7,6 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <title>Document</title>
@@ -36,10 +41,10 @@
                         </div>
                     </div>
 
-                    <div class="icon_right">
+                    <div class="icon">
+                        <i class="fas fa-circle-notch"></i>
                         <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-comment-alt"></i>
+                        <i class="fas fa-ellipsis-v"></i>
 
                     </div>
 
@@ -49,9 +54,14 @@
 
                     <div class="post-meta">
 
-                        <div class="post-meta__icon">
+                        <div class="post-meta__icon bell">
 
-                            <img class="profile-pic" src="https://unsplash.it/300/300?image=15" alt="Phil Mangione">
+                            <div class="bellContainer">
+                                <i class="fas fa-bell-slash"></i>
+
+                            </div>
+
+
 
                         </div>
                         <div class="post-meta__data">
@@ -63,7 +73,8 @@
 
                 </div>
 
-                <div class="searchBar">
+                <div class="searchBarContainer">
+
                     <div class="icon_searchBar">
 
                         <i class="fas fa-search"></i>
@@ -71,16 +82,15 @@
                     </div>
 
                     <div>
-                        <input type="text" v-model="inputContact" @keyup="filterName">
+                        <input type="text" v-model="inputContact" @keyup="filterName" placeholder="Cerca o inizia una nuova chat">
 
                     </div>
+
                 </div>
 
                 <div v-for="(contatto,i) in contacts" class="tab_utente white"
-                    :class="[i === activeContact ? 'active' : '', contatto.visible === false ? 'hide' : '' ]" 
-                    
-                    @click="selectContact(i)"
-                    >
+                    :class="[i === activeContact ? 'active' : '', contatto.visible === false ? 'hide' : '' ]"
+                    @click="selectContact(i)">
 
                     <div class="post-meta">
 
@@ -96,7 +106,7 @@
                         </div>
                     </div>
 
-                    <div class="icon_right time">
+                    <div class="icon time">
 
                         12:00
 
@@ -125,10 +135,10 @@
                         </div>
                     </div>
 
-                    <div class="icon_right">
-                        <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-comment-alt"></i>
-                        <i class="fas fa-comment-alt"></i>
+                    <div class="icon">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
 
                     </div>
 
@@ -137,38 +147,37 @@
                 <div class="container-chat">
 
 
-                    <div class="chat-left">
-                       
-                        <div v-for="(messaggio,index) in contacts[activeContact].messages" :class="getMessageClass(index)">
+                    <div class="chat">
+
+                        <div v-for="(messaggio,index) in contacts[activeContact].messages"
+                            :class="getMessageClass(index)" class="messaggio">
 
                             <span>{{messaggio.message}}</span>
 
-                            
-    
+
+
                         </div>
 
 
                     </div>
 
-                    <!-- <div class="chat-right">
-
-                        <div class="interlo" v-for="(messaggi,i) in newMessages">
-                            {{newMessages[i].text}}
-                        </div>
-                        
-
-
-                    </div> -->
-
-
-
-
-
                 </div>
 
                 <div class="textArea">
-                    <input type="text" v-model="newMessage" @keyup.enter="sendMessage()">
-                    
+                    <div class="icon_footer">
+                        <i class="fas fa-smile"></i>
+                    </div>
+
+                    <div class="search_footer">
+                        <input type="text" v-model="newMessage" @keyup.enter="sendMessage()">
+
+                    </div>
+
+                    <div class="icon_footer">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+
+
                 </div>
 
 

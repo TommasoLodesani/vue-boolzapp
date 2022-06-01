@@ -4,12 +4,16 @@
     box-sizing: border-box;
 }
 
+body{
+    font-family: 'Lato', sans-serif;
+    background-color: #dadbd2;
+}
+
 main{
     width: 90%;
     margin: auto;
     margin-top: 20px;
     display: flex;
-    
 }
 
 .tab_utente.white.active{
@@ -41,8 +45,21 @@ main{
 }
 
 .post-meta__icon {
-    margin-right: 24px;
+    margin-right: 12px;
+    margin-left: 5px;
 }
+
+.post-meta__icon.bell i {
+    color: #8edafc;
+}
+
+
+.bellContainer{
+    border-radius: 50%;
+    background-color: white;
+    padding: 10px;
+}
+
 
 .post-meta__data {
     display: flex;
@@ -52,27 +69,50 @@ main{
 
 .post-meta__time {
     font-size: 0.8rem;
+    color: #4f7485;
+    text-decoration: underline;
 }
+
 
 .profile-pic {
     border-radius: 50%;
     max-width: 40px;
 }
 
-.icon_right {
+.icon{
     display: flex;
     align-items: center;
 }
 
+.icon i {
+    padding: 0 6px;
+    color: #b1b1b1;
+}
 
 .tab_utente.blue{
     background-color: #8edafc;
     padding: 20px;
 }
 
-.searchBar{
+.searchBarContainer{
     display: flex;
-    background-color: #eaeaea;
+    background-color: #fafafa;
+   
+}
+
+.searchBarContainer .icon_searchBar{
+    background-color: white;
+    border: solid 0.5px #b6b9bb
+}
+
+.searchBarContainer .icon_searchBar i{
+    padding: 6px 27px;
+}
+
+.searchBarContainer input{
+    width: 247%;
+    height: 100%;
+    /* border: #b6b9bb; */
 }
 
 
@@ -89,30 +129,61 @@ main{
 }
 
 .container-chat{
-    display: flex;
     height: 560px;
+    /* width: 95%;
+    margin: auto;
+    margin-top: 40px; */
+    background-image: url("img/official-whatsapp-background-image.png")
 }
 
-.chat-left{
-    /* display: flex;
-    flex-direction: column; */
-   
+.container-chat .chat{
+    width: 95%;
+    margin: auto;
+    padding-top: 40px;
+  
+
+}
+
+.messaggio{
+    padding: 12px;
 }
 
 .received{
     width: 300px;
-    background-color: aliceblue ;
+    background-color: #ffffff ;
     /* height: 50px; */
     margin: 5px;
 }
 
 .sent{
     width: 300px;
-    background-color: green;
+    background-color: #d5f9ba;
     /* height: 50px; */
     margin: 5px;
+    margin-left: 339px;
+
 }
 
 .hide{
     display: none;
+}
+
+
+.textArea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    border: solid 1px #b6b9bb;
+}
+
+.textArea .search_footer input{
+    width: 515px;
+    height: 37px;
+
+    
+}
+
+.textArea .icon_footer{
+    padding: 4px 25px;
 }
